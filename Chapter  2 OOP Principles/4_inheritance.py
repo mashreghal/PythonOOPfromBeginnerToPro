@@ -37,7 +37,8 @@ class Bike(Vehicel):
 """Car and Bike classes inherit from the Vehicle class, gaining access to its attributes and methods. They also have their own specific attributes and methods.
 Also note that Inheritance allows for polymorphism......."""
 
-""" A teaser on polymorphism that comes in the next chapter. Polymorphism allows methods to do different things based on the object it is acting upon, even if they share the same name"""
+""" A teaser on polymorphism that comes in the next chapter. Polymorphism allows methods to do different things based on the object it is acting upon, 
+even if they share the same name"""
 
 
 

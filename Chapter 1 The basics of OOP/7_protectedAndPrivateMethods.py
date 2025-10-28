@@ -1,4 +1,4 @@
-#jsut like attributes methods can be protected or private
+#just like attributes methods can be protected or private
 
 class BankAccount:
     def __init__(self, balance):
@@ -16,11 +16,11 @@ class BankAccount:
         else:
             print("Deposit amount must be positive")
 
-    def _log_transcation(self, amount, transaction_type): #this is a private method meaning it can only be accessed by this class
-        """Private method to log transactions"""
-        print(f"Transaction: {transaction_type} of ${amount}. Current balance: ${self._balance}")   
-
-
+        def _log_transcation(self, amount, transaction_type): #this is a private method meaning it can only be accessed by this class
+            """Private method to log transactions"""
+            print(f"Transaction: {transaction_type} of ${amount}. Current balance: ${self._balance}")   
+    
+    
     myAccount = BankAccount(1000)
     myAccount.deposit(500)  # Valid deposit
     myAccount.deposit(-200)  # Invalid deposit
