@@ -41,7 +41,8 @@ vehicles = [
     Motorcycle("Harley-Davidson", "Street 750", 2019, False)
 ]
 
-#loop through the vehicles and start and stop each one
+#loop through the vehicles and start and stop each one to see how it works without polymorphism
+#so waren früher unsere PGRTs organisiert
 for vehicle in vehicles:
     if isinstance(vehicle, Car):
         vehicle.start()
@@ -50,7 +51,7 @@ for vehicle in vehicles:
         vehicle.start()
         vehicle.stop()
 # As you can see above we had to check the type of each vehicle to call the start and stop methods.
-# Now let's see how polymorphism can help us simplify this code
+# Now let's see how polymorphism can help us simplify this code by using a base class and inheritance.
 class Vehicle:
     def __init__(self, brand, model, year):
         self.brand = brand
