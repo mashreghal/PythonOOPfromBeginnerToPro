@@ -61,3 +61,5 @@ make_bird_move(ostrich)  # Works fine
 #The Sparrow class inherits from FlyingBird, while the Ostrich class inherits from NonFlyingBird. This way, each subclass adheres to the expected behavior of its parent class without violating the Liskov Substitution Principle.
 #This adheres to the Liskov Substitution Principle because any instance of Bird can be replaced with an instance of its subclasses (FlyingBird or NonFlyingBird) without altering the correctness of the program.
 #In the end of the day we use Bird objects that behave as expected without surprises.
+
+

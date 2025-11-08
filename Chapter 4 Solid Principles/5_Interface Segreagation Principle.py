@@ -79,3 +79,28 @@ manage_workable(robot)  # Works fine
 #The HumanWorker class implements both interfaces, while the RobotWorker class only implements the Workable interface. 
 # This way, each class only depends on the methods that are relevant to them, adhering to the Interface Segregation Principle.
 #It makes sense to inherently separate the abilities of working and eating into different interfaces, as not all workers (like robots) need to eat.
+
+#-----------------------------------------------------------------------------------------------------------
+# RELATIONSHIP BETWEEN ISP AND LSP
+#-----------------------------------------------------------------------------------------------------------
+# ISP (Interface Segregation Principle):
+#   - About NOT FORCING classes to implement methods they don't need
+#   - Focus: "Should this interface have all these methods, or should it be split?"
+#   - Example: Don't force Robot to implement eat() if robots don't eat
+#
+# LSP (Liskov Substitution Principle):
+#   - About BEHAVIORAL COMPATIBILITY between parent and child classes
+#   - Focus: "Can I replace a parent with a child without breaking things?"
+#   - Example: Ostrich shouldn't override fly() to throw an error (breaks expected behavior)
+#
+# HOW THEY'RE RELATED:
+#   - ISP violations often lead to LSP violations
+#   - In the bad example: Robot is forced to implement eat(), so it throws an error (ISP violation)
+#   - This also violates LSP because manage_worker(robot) breaks when it calls robot.eat()
+#   - The solution: Split Worker into Workable and Eatable (applying ISP)
+#   - Now Robot only implements Workable, so it can't be misused (achieves LSP too)
+#
+# THINK OF IT THIS WAY:
+#   - ISP = "Don't force children to do things they can't" (interface appropriateness)
+#   - LSP = "All children must behave like their parents expect" (behavioral correctness)
+#   - They work together: Proper interface segregation prevents behavioral incompatibility
