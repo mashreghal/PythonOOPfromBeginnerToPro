@@ -1,18 +1,17 @@
 # An example that breaks the Single Responsibility Principle (SRP)
-
 class EmailSender:
     def send(self, subject, recipient):
         print(f"Sending email to {recipient} with subject: {subject}")
 
 class User:
     def __init__(self, username, email):
-        self.username = username #Public attribute
+        self.username = username 
         self.email = email
 
     def register(self):
         """Registers the user and sends a welcome email."""
         #first responsibility: user registration
-        print(f"Registering user: {self.username}")
+        print(f"Registering user: {self.username}") #emulate some registration logic
         #second responsibility: sending email
         email_sender = EmailSender()
         email_sender.send("Welcome!", self.email)
@@ -24,9 +23,8 @@ user.register()
 
 # In this example, the User class has two responsibilities: managing user data and sending emails. This violates the Single Responsibility Principle because the class has more than one reason to change 
 #   (e.g., changes in user management or email sending logic).
-#-----------------------------------------------------------------------------------------------------------
 
-# A refactored example that adheres to the Single Responsibility Principle (SRP)
+# Now let us have a look at a refactored example that adheres to the Single Responsibility Principle (SRP)
 class EmailService:
     def send(self, subject, recipient):
         print(f"Sending email to {recipient} with subject: {subject}")
@@ -38,7 +36,7 @@ class User:
 
     def register(self):
         """Registers the user."""
-        print(f"Registering user: {self.username}")
+        print(f"Registering user: {self.username}") #emulate some registration logic
 
 #Example usage
 user = User("jane_doe", "jane_doe@gamil.com")
@@ -48,8 +46,7 @@ email_service = EmailService()
 email_service.send("Welcome!", user.email)
 
 # In this refactored example, the User class is only responsible for managing user data and registration, while the EmailService class is responsible for sending emails.
-
-# This adheres to the Single Responsibility Principle because each class has only one reason to change.
+# This adheres to the Single Responsibility Principle because each class has only one reason to change. 
 
 #-----------------------------------------------------------------------------------------------------------
 # IMPORTANT: SRP vs COUPLING - What's the difference?

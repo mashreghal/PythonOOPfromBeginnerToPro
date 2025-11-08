@@ -1,10 +1,10 @@
-""" OCP is one of the SOLID principles of object-oriented design.
+""" 
+OCP is one of the SOLID principles of object-oriented design.
 It states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
 This means that the behavior of a module can be extended without modifying its source code, which helps to prevent bugs and maintain stability in the existing codebase.
 You can achieve this by using abstractions, interfaces, and polymorphism to allow new functionality to be added through new code rather than changing existing code.
 """
-
-#Bad example that violates the Open/Closed Principle (OCP)
+#LEt's start with a bad example that violates the Open/Closed Principle (OCP)
 from enum import Enum
 import math
 
@@ -34,8 +34,7 @@ print(f"Circle area: {circle.calculate_area()}")
 print(f"Rectangle area: {rectangle.calculate_area()}")
 
 #In this bad example, the Shape class violates the Open/Closed Principle
-#
-#because if we want to add a new shape type (e.g., Triangle), we would need to modify the calculate_area method.
+#because if we want to add a new shape type (e.g., Triangle), we would need to modify the calculate_area method by adding another conditional branch.
 
 #Let's refactor the code to adhere to the Open/Closed Principle by using polymorphism.
 
@@ -68,5 +67,4 @@ print(f"Circle area: {circle.calculate_area()}")
 print(f"Rectangle area: {rectangle.calculate_area()}")
 
 # This is much better! Now, if we want to add a new shape type (e.g., Triangle), we can simply create a new class that inherits from Shape and implements the calculate_area method without modifying any existing code.
-
-#Denke an PGRTs wie die original waren, noch vor der Klasseneinführung
+# Denke daran wie wir im LabVIEW Projekt die verschieden Anstuerungen der Quellen organisiert haben.
